@@ -1,20 +1,35 @@
-# Análise do Código - Teste de Caixa Branca
+# **TesteCaixaBranca - Sistema de Login**
+---
+
+## **Problemas Identificados**
+
+### 1. **Erro no driver JDBC**
+- **Descrição:** O código utiliza a classe `"com.mysql.DriverManager"` como driver JDBC, o que está incorreto.
+- **Impacto:** Impede a conexão com o banco de dados, tornando o sistema inutilizável.
 
 ---
 
-## Erros Identificados
+### 2. **SQL Injection**
+- **Descrição:** As variáveis `login` e `senha` são conectadas diretamente na query SQL, deixando o sistema vulnerável a ataques de SQL Injection.
+- **Impacto:** Possibilidade de invasões ao banco de dados, comprometendo a segurança do sistema.
 
-### 1. Uso de String para Construção de Queries (SQL Injection)
-- O uso de concatenação de strings para montar queries SQL torna o código vulnerável a ataques de SQL Injection.
+---
 
-### 2. Manuseio de Conexões com o Banco de Dados
-- As conexões com o banco de dados, `Statement` e `ResultSet` não são fechados adequadamente, o que pode causar vazamento de recursos.
+### 3. **Conexão não fechada**
+- **Descrição:** A conexão com o banco de dados (`Connection`) não é fechada após o uso, causando vazamento de recursos.
+- **Impacto:** Péssimo desempenho e possibilidade de falhas no sistema devido ao esgotamento de conexões.
 
-### 3. Uso Obsoleto de `Class.forName`
-- A linha que carrega o driver do banco de dados é desnecessária em versões modernas do JDBC (4.0 ou superior).
+---
 
-### 4. Exposição de Credenciais no Código
-- As credenciais do banco de dados estão hardcoded no código.
+### 4. **Manipulação de exceções**
+- **Descrição:** O código ignora exceções ao capturá-las.
+- **Impacto:** Dificuldade para diagnosticar erros e manter o sistema.
 
-### 5. Falta de Validação de Entrada
-- Os parâmetros fornecidos pelo usuário (`login` e `senha`) não são validados ou sanitizados antes do uso.
+---
+
+### 5. **Nomes confusos**
+- **Descrição:** As variáveis globais `result` e `nome` possuem nomes genéricos, dificultando o entendimento do código.
+- **Impacto:** Reduz a legibilidade e aumenta a chance de erros por confusão.
+
+---
+
