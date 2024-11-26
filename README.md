@@ -1,7 +1,4 @@
-# **Análise Estática de Código - Sistema de Login**
-
-Este repositório tem um exemplo de código para autenticação de usuários em Java com JDBC. Durante a análise, foram encontrados diversos problemas de segurança, desempenho e manutenção do sistema. Este documento detalhas em tópicos os problemas encontrados.
-
+# **TesteCaixaBranca - Sistema de Login**
 ---
 
 ## **Problemas Identificados**
