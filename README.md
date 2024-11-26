@@ -51,7 +51,7 @@
 9. **Exceção:** Tratamento de exceção para erros.
 
 ### Grafo de Fluxo
-![Grafo de Fluxo do Código](src/grafo_fluxo.png)
+![Grafo de Fluxo do Código](./src/grafo_fluxo.jpg)
 
 ### Complexidade Ciclomática
 
