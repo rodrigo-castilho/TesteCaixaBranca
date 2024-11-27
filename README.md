@@ -33,3 +33,9 @@
 
 ---
 
+### 6. **Possível NullPointerException**
+- **Descrição:** Caso a conexão ao banco de dados falhe, a variável `conn` será nula. O código não verifica essa possibilidade antes de utilizá-la.
+- **Impacto:** Erros inesperados durante a execução do sistema.
+
+---
+
